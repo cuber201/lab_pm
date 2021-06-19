@@ -65,39 +65,27 @@ void func::add(){
 }
 void func::prod_delete(){
 	int id;
-	cout<<"-------------------------"<< endl;
+        cout<<"-------------------------"<< endl;
         cout<<"Выберите номер элемента от 1 до "<<size<<":";
-	cin>>id;
-	id--;
-	prod* temp = new prod[size];
-	if(id==size){
-		size--;
-		for (int i=0;i<size;i++){
-			temp[i]=arr[i];
-		}
-		delete [] arr;
-		arr = new prod[size];
-		for (int i=0;i<size;i++){
-			arr[i]=temp[i];
-		}
-		delete [] temp;
-	}else{
-		for (int i=0;i<size;i++){
-			if (i<id){
-				temp[i]=arr[i];
-			}
-			else{
-				temp[i]=arr[i+1];
-			}
-		}
-		size--;
-		delete [] arr;
-		arr = new prod[size];
-		for (int i=0;i<size;i++){
-		arr[i]=temp[i];
-		}
-		delete [] temp;
-	}
+        cin>>id;
+        id--;
+        prod* temp = new prod[size];
+        for (int i=0;i<size;i++){
+                temp[i]=arr[i];
+        }
+        size--;
+        delete [] arr;
+        arr = new prod[size];
+        for (int i=0;i<size;i++){
+        if(i<id){
+                arr[i]=temp[i];
+                }
+        else{
+                arr[i]=temp[i+1];
+                }
+        }
+        delete [] temp;
+
 }
 void func::print(){
 	cout<<"-------------------------"<< endl;
