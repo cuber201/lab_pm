@@ -45,6 +45,5 @@ int main(int argc,char*argv[]){
 				cin>>state;
 		}
 	}
-	fn.~func();
 	cout<<"Close"<<endl;
 }
