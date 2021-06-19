@@ -5,9 +5,7 @@ using namespace std;
 int main(int argc,char*argv[]){
 	menu();
 	func fn(argv[1]);
-	//cout<<argv[1]<<endl;
 	fn.load();
-	//fn.print();
 	int state;
 	cin>>state;
 	while (state !=0){
@@ -47,5 +45,6 @@ int main(int argc,char*argv[]){
 				cin>>state;
 		}
 	}
+	fn.~func();
 	cout<<"Close"<<endl;
 }
